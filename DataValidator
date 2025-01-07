@@ -1,0 +1,9 @@
+public class DataValidator {
+    public boolean validarNombre(String nombre) {
+        return nombre != null && !nombre.trim().isEmpty();
+    }
+
+    public boolean validarEdad(int edad) {
+        return edad > 0 && edad < 120;
+    }
+}
