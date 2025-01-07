@@ -1,0 +1,22 @@
+public class Main {
+    public static void main(String[] args) {
+        // Instancias de las clases
+        DataValidator validator = new DataValidator();
+        UserInterfaceManager uiManager = new UserInterfaceManager();
+        DatabaseManager dbManager = new DatabaseManager();
+
+        // Simulación de datos
+        String nombrePaciente = "Juan Pérez";
+        int edadPaciente = 30;
+
+        // Validación de datos
+        if (validator.validarNombre(nombrePaciente) && validator.validarEdad(edadPaciente)) {
+            // Interacción con la base de datos
+            dbManager.registrarPaciente(nombrePaciente, edadPaciente);
+            // Actualización de la interfaz de usuario
+            uiManager.mostrarMensaje("Paciente registrado exitosamente.");
+        } else {
+            uiManager.mostrarMensaje("Datos inválidos. Por favor, verifique la información.");
+        }
+    }
+}
